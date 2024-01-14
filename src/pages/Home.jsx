@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import Slider from "../components/Slider";
 
 const Home = () => {
-  return <div className="h-[1180px] bg-[#264653]"></div>
-}
+  return (
+    <div>
+      <Slider />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

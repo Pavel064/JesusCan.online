@@ -1,8 +1,8 @@
-import backgroundImage from '/bg-header.svg'
-import burger from '/burger.svg'
-import logoImage from '/logo.svg'
-import darkMode from '/dark-mode.svg'
-import lang from '/lang.svg'
+import backgroundImage from "/bg-header.svg";
+import burger from "/burger.svg";
+import logoImage from "/logo.svg";
+import darkMode from "/dark-mode.svg";
+import lang from "/lang.svg";
 
 const Header = () => {
   return (
@@ -23,7 +23,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

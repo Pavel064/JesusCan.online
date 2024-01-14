@@ -1,4 +1,4 @@
-import logoImage from '/logo.svg'
+import logoImage from "/logo.svg";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
         <a href="/contact">Contact Us</a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
