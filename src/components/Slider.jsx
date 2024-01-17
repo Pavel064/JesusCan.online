@@ -35,8 +35,8 @@ const Slider = () => {
     <div className="flex w-full h-[680px]">
       <div className="w-1/3 flex h-full bg-[#264653]">
         <div className="flex flex-grow items-center justify-center">
-          <div className="w-[360px] h-[500px] rounded-2xl relative">
-            <img src={defPhoto} className="rounded-2xl w-full h-full" />
+          <div className="rounded-2xl relative ml-16 mr-8">
+            <img src={defPhoto} className="rounded-2xl" />
             <div
               style={{
                 position: "absolute",
@@ -64,25 +64,25 @@ const Slider = () => {
         </div>
         <div className="flex flex-col flex-grow justify-center p-5 gap-7 text-xl">
           <div
-            className="bg-white w-full  p-4 text-left rounded-2xl"
+            className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
             style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
           >
             Name
           </div>
           <div
-            className="bg-white w-full p-4 text-left rounded-2xl"
+            className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
             style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
           >
             The plase you born in (country and city/town)
           </div>
           <div
-            className="bg-white w-full p-4 text-left rounded-2xl"
+            className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
             style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
           >
             Religious beliefs before accepting Christ
           </div>
           <div
-            className="bg-white w-full p-4 rounded-2xl"
+            className="bg-white w-full rounded-2xl p-3 2xl:p-4"
             style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
           >
             Sins of the past
@@ -91,7 +91,7 @@ const Slider = () => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className="w-[160px] h-[160px] rounded-2xl relative"
+                className="rounded-2xl relative"
                 style={{
                   boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)",
                 }}
@@ -117,7 +117,7 @@ const Slider = () => {
           </div>
 
           <div
-            className="bg-white w-full p-4 text-left rounded-2xl"
+            className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
             style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
           >
             Year of Acceptance of Christ
