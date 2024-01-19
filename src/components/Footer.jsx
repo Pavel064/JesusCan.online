@@ -2,7 +2,7 @@ import logoImage from "/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="w-full h-36 bg-white flex items-center justify-between px-20">
+    <div className="w-full h-36 bg-white flex items-center justify-between px-20 2xl:max-w-7xl mx-auto">
       <div className="w-1/5">
         <img className="h-10" src={logoImage} alt="Logo" />
       </div>
