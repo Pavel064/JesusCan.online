@@ -7,7 +7,7 @@ import lang from "/lang.svg";
 const Header = () => {
   return (
     <div
-      className="relative w-full md:h-52 2xl:h-80 bg-cover bg-center"
+      className="relative w-full md:h-52 2xl:h-96 bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="p-5 bg-white bg-opacity-50 md:absolute md:bottom-0 md:w-full md:h-16">
