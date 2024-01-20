@@ -5,7 +5,7 @@ const TestimonyAdding = () => {
   return (
     <div className="h-52 bg-[#EDEDE9] flex items-center">
       <div className="mx-auto uppercase text-5xl font-semibold 2xl:max-w-7xl">
-        <Button label="add your testimony" />
+        <Button label="Add your testimony" />
       </div>
     </div>
   );
