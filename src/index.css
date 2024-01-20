@@ -31,10 +31,7 @@ a:hover {
     aspect-ratio: 1/1; */
     border: 0.5rem solid transparent;
     border-radius: 1rem;
-    background: none;
-    min-width: 205px;
-    min-height: 88px;
-  
+      
     display: grid;
     place-content: center;
     gap: 1rem;

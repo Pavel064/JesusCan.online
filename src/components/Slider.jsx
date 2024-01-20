@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Button from "./Button";
+
 import arrDown from "/arrow-down.svg";
 import arrUp from "/arrow-up.svg";
 import defPhoto from "/Mariia.jpg";
@@ -8,7 +9,7 @@ import sin3 from "/Frame-18.svg";
 import sin4 from "/Frame-28.svg";
 
 const Slider = () => {
-  const images = [sin1, sin2, sin3, sin4];
+  const sinsArr = [sin1, sin2, sin3, sin4];
 
   return (
     <div className="bg-[#2A9D8F]">
@@ -68,7 +69,7 @@ const Slider = () => {
               Sins of the past
             </div>
             <div className="flex justify-center items-center w-full my-4 gap-10">
-              {images.map((image, index) => (
+              {sinsArr.map((image, index) => (
                 <div
                   key={index}
                   className="rounded-2xl relative"
@@ -134,7 +135,7 @@ const Slider = () => {
           Sins of the past
         </div>
         <div className="flex flex-wrap justify-center items-center w-full my-4 gap-10">
-          {images.map((image, index) => (
+          {sinsArr.map((image, index) => (
             <div
               key={index}
               className="w-1/3 md:w-auto rounded-2xl relative"
@@ -166,6 +167,16 @@ const Slider = () => {
           style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
         >
           Year of Acceptance of Christ
+        </div>
+        <div className="flex flex-row self-center gap-5">
+          <Button
+            label="Prev"
+            btnStyle={{ width: "100px", height: "50px", background: "#EDEDE9" }}
+          />
+          <Button
+            label="Next"
+            btnStyle={{ width: "100px", height: "50px", background: "#EDEDE9" }}
+          />
         </div>
       </div>
     </div>
