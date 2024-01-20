@@ -8,32 +8,11 @@ import sin3 from "/Frame-18.svg";
 import sin4 from "/Frame-28.svg";
 
 const Slider = () => {
-  const slides = [
-    "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-    "https://images.unsplash.com/photo-1663123878927-ff25c560a682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-    "https://images.unsplash.com/photo-1662562655231-2dc528ca43b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1054&q=80",
-    "https://images.unsplash.com/photo-1662217789896-08189e62e98c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
-  ];
   const images = [sin1, sin2, sin3, sin4];
-
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const slidesCount = slides.length;
-  // console.log(slidesCount);
-
-  const changeSlide = (direction) => {
-    setActiveSlideIndex((prevIndex) => {
-      if (direction === "up") {
-        return prevIndex === 0 ? slidesCount - 1 : prevIndex - 1;
-      } else {
-        // direction === 'down'
-        return prevIndex === slidesCount - 1 ? 0 : prevIndex + 1;
-      }
-    });
-  };
 
   return (
     <div className="bg-[#2A9D8F]">
-      <div className="flex h-auto mx-auto 2xl:max-w-7xl">
+      <div className="hidden md:flex h-auto mx-auto 2xl:max-w-7xl">
         <div className="w-1/3 flex bg-[#264653]">
           <div className="flex flex-grow items-center justify-center">
             <div className="rounded-2xl relative ml-16 mr-8">
@@ -124,6 +103,69 @@ const Slider = () => {
               Year of Acceptance of Christ
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col mx-5 py-5 gap-5 md:hidden">
+        <div className="rounded-2xl">
+          <img src={defPhoto} className="rounded-2xl" />
+        </div>
+        <div
+          className="bg-white w-full text-left rounded-2xl p-3"
+          style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
+        >
+          Name
+        </div>
+        <div
+          className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
+          style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
+        >
+          The plase you born in (country and city/town)
+        </div>
+        <div
+          className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
+          style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
+        >
+          Religious beliefs before accepting Christ
+        </div>
+        <div
+          className="bg-white w-full rounded-2xl p-3 2xl:p-4"
+          style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
+        >
+          Sins of the past
+        </div>
+        <div className="flex flex-wrap justify-center items-center w-full my-4 gap-10">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="rounded-2xl relative"
+              style={{
+                boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)",
+              }}
+            >
+              <img
+                src={image}
+                alt={`Image ${index}`}
+                className="rounded-2xl w-full h-full"
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)",
+                  borderRadius: "inherit",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div
+          className="bg-white w-full text-left rounded-2xl p-3 2xl:p-4"
+          style={{ boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)" }}
+        >
+          Year of Acceptance of Christ
         </div>
       </div>
     </div>
