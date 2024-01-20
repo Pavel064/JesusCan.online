@@ -137,7 +137,7 @@ const Slider = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="rounded-2xl relative"
+              className="w-1/3 md:w-auto rounded-2xl relative"
               style={{
                 boxShadow: "inset 0 6px 8px 0 rgba(0, 0, 0, 0.35)",
               }}
