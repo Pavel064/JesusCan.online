@@ -9,25 +9,25 @@ const Footer = () => {
 
       <div className="flex flex-col uppercase lg:text-2xl pb-6 md:flex-row md:w-4/5 md:justify-evenly">
         <a
-          className="border-0 rounded-lg flex items-center transition-all p-4 active:shadow-inner"
+          className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
           href="/about"
         >
           About Us
         </a>
         <a
-          className="border-0 rounded-lg flex items-center transition-all p-4 active:shadow-inner"
+          className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
           href="/"
         >
           testimony
         </a>
         <a
-          className="border-0 rounded-lg flex items-center transition-all p-4 active:shadow-inner"
+          className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
           href="/read-gospel"
         >
           Read the Gospel
         </a>
         <a
-          className="border-0 rounded-lg flex items-center transition-all p-4 active:shadow-inner"
+          className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
           href="/contact"
         >
           Contact Us

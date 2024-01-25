@@ -2,21 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   text-align: center;
-
-
-  color-scheme: light dark;
   color: #264653;
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -28,35 +23,37 @@ a:hover {
 
 .neumorphic-button {
   /* display: inline-size;
-    aspect-ratio: 1/1; */
-    border: 0.5rem solid transparent;
-    border-radius: 1rem;
-      
-    display: grid;
-    place-content: center;
-    gap: 1rem;
-  
-    --shadow:
-      -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
-      .5rem .5rem 1rem hsl(0 0% 50% / .5);
-    box-shadow: var(--shadow);
-    outline: none;
-    transition: all 0.1s;
-  
-    &:hover, &:focus-visible {
-      color: #2A9D8F;
-      transform: scale(1.1);
-    }
-    &:active, &.active {
-      box-shadow:
-        var(--shadow),
-        inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
-        inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
-    }
+  aspect-ratio: 1/1; */
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+
+  --shadow:
+    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    .5rem .5rem 1rem hsl(0 0% 50% / .5);
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+
+  &:hover, &:focus-visible {
+    color: #2A9D8F;
+    transform: scale(1.1);
   }
-  
-  .neumorphic-button:active span {
-    font-size: 0.875rem;
-    transition: font-size 0.1s;
+  &:active, &.active {
+    box-shadow:
+      var(--shadow),
+      inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
+      inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
   }
-  
+}
+
+.neumorphic-button:active span {
+  font-size: 0.875rem;
+  transition: font-size 0.1s;
+}
+
+.ant-drawer-header-title {
+  flex-direction: row-reverse;
+}

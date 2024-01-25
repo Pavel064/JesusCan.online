@@ -1,10 +1,16 @@
 import backgroundImage from "/bg-header.svg";
-import burger from "/burger.svg";
 import logoImage from "/logo.svg";
 import darkMode from "/dark-mode.svg";
 import lang from "/lang.svg";
+import { MenuDrawer } from "./MenuDrawer";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const showDrawer = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div
       className="relative w-full md:h-52 2xl:h-[430px] bg-cover bg-center"
@@ -12,13 +18,13 @@ const Header = () => {
     >
       <div className="p-5 bg-white bg-opacity-50 md:absolute md:bottom-0 md:w-full md:h-16">
         <div className="flex justify-between items-center h-full md:px-20 2xl:max-w-7xl mx-auto">
-          <img src={burger} alt="Menu" />
+          <MenuDrawer showDrawer={showDrawer} isOpen={isOpen} />
 
           <img className="h-10" src={logoImage} alt="Logo" />
 
           <div className="flex gap-5">
-            <img src={darkMode} alt="Dark Mode" />
-            <img src={lang} alt="Lang" />
+            <img src={darkMode} alt="Dark Mode" className="w-9 h-9" />
+            <img src={lang} alt="Lang" className="w-9 h-9" />
           </div>
         </div>
       </div>
