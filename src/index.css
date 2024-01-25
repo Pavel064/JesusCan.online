@@ -54,6 +54,29 @@ a:hover {
   transition: font-size 0.1s;
 }
 
+/* MenuDrawer */
 .ant-drawer-header-title {
   flex-direction: row-reverse;
 }
+
+.ant-drawer-title {
+  font-size: 36px !important;
+}
+
+.ant-drawer-close {
+  font-size: 36px !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #e9f5f3 !important;
+}
+.ant-menu-item:active {
+  background-color: #2A9D8F !important;
+}
+.ant-menu-item:focus-visible {
+outline: 4px solid #e9f5f3 !important;} 
+.ant-menu-item-selected {
+  background-color: unset !important;
+  color: unset !important;
+}
+/* END MenuDrawer */

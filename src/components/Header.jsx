@@ -13,7 +13,8 @@ const Header = () => {
 
   return (
     <div
-      className="relative w-full md:h-52 2xl:h-[430px] bg-cover bg-center"
+      // className="relative w-full md:h-40 2xl:h-[380px] bg-cover bg-center"
+      className="relative w-full bg-cover bg-center md:h-[30vh]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="p-5 bg-white bg-opacity-50 md:absolute md:bottom-0 md:w-full md:h-16">
