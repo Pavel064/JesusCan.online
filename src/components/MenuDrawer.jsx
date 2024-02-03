@@ -17,8 +17,8 @@ function getItem(label, key, icon, children, type) {
 export function MenuDrawer({ showDrawer, isOpen }) {
   const menuItems = [
     getItem("About Us", "1"),
-    getItem("Testimony", "2"),
-    getItem("Read the Gospel", "3"),
+    getItem("Home", "2"),
+    getItem("Bible", "3"),
     getItem("Contact Us", "4"),
   ];
 
@@ -29,7 +29,12 @@ export function MenuDrawer({ showDrawer, isOpen }) {
 
   return (
     <>
-      <img src={burger} alt="Menu" className="w-9 h-9" onClick={showDrawer} />
+      <img
+        src={burger}
+        alt="Menu"
+        className="w-9 h-9 cursor-pointer"
+        onClick={showDrawer}
+      />
 
       <Drawer
         title="MAIN MENU"

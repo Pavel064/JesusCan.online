@@ -1,37 +1,41 @@
+import { Link } from "react-router-dom";
+
 import logoImage from "/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col mx-auto w-full items-center my-4 px-2 md:flex-row md:px-20 md:justify-between 2xl:max-w-7xl cursor-pointer">
+    <div className="flex flex-col mx-auto w-full items-center mt-4 px-2 md:flex-row md:px-20 md:justify-between 2xl:max-w-7xl cursor-pointer">
       <div className="md:w-1/5">
-        <img className="h-10" src={logoImage} alt="Logo" />
+        <Link to="/">
+          <img className="h-10" src={logoImage} alt="Logo" />
+        </Link>
       </div>
 
       <div className="flex flex-col uppercase lg:text-2xl pb-6 md:flex-row md:w-4/5 md:justify-evenly">
-        <a
+        <Link
           className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
-          href="/about"
+          to="/about-us"
         >
           About Us
-        </a>
-        <a
+        </Link>
+        <Link
           className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
-          href="/"
+          to="/"
         >
-          testimony
-        </a>
-        <a
+          home
+        </Link>
+        <Link
           className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
-          href="/read-gospel"
+          to="/bible"
         >
-          Read the Gospel
-        </a>
-        <a
+          bible
+        </Link>
+        <Link
           className="border-0 rounded-lg flex items-center self-center transition-all p-4 active:shadow-inner"
-          href="/contact"
+          to="/contact-us"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );

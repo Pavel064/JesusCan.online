@@ -9,7 +9,7 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Rubik, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #264653;
 }
@@ -24,28 +24,27 @@ a:hover {
 .neumorphic-button {
   /* display: inline-size;
   aspect-ratio: 1/1; */
-  border: 0.5rem solid transparent;
-  border-radius: 1rem;
+  color: white;
+  border-radius: 12px;
   display: grid;
   place-content: center;
   gap: 1rem;
 
   --shadow:
-    -.5rem -.5rem 1rem hsl(0 0% 100% / .75),
+    /* -.5rem -.5rem 1rem hsl(0 0% 100% / .75), */
     .5rem .5rem 1rem hsl(0 0% 50% / .5);
   box-shadow: var(--shadow);
   outline: none;
   transition: all 0.1s;
 
   &:hover, &:focus-visible {
-    color: #2A9D8F;
     transform: scale(1.1);
   }
   &:active, &.active {
     box-shadow:
       var(--shadow),
       inset .5rem .5rem 1rem hsl(0 0% 50% / .5),
-      inset -.5rem -.5rem 1rem hsl(0 0% 100% / .75);
+      inset -.2rem -.2rem 1rem rgba(255, 255, 255, 0.283);
   }
 }
 
@@ -74,7 +73,7 @@ a:hover {
   background-color: #2A9D8F !important;
 }
 .ant-menu-item:focus-visible {
-outline: 4px solid #e9f5f3 !important;} 
+outline: 4px solid #e9f5f3 !important;}
 .ant-menu-item-selected {
   background-color: unset !important;
   color: unset !important;

@@ -1,11 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Button from "./Button";
 
 const TestimonyAdding = () => {
   return (
     <div className="h-52 bg-[#EDEDE9] flex items-center">
       <div className="mx-auto uppercase text-5xl font-semibold 2xl:max-w-7xl">
-        <Button label="Add your testimony" />
+        <Link to="/adding-testimony">
+          <Button
+            label="Add your testimony"
+            btnStyle={{
+              width: "208px",
+              height: "88px",
+              border: "6px solid transparent",
+            }}
+          />
+        </Link>
       </div>
     </div>
   );
