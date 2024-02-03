@@ -1,25 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { Drawer, Menu } from "antd";
 
 import burger from "/burger.svg";
 import logoImage from "/logo.svg";
 
-function getItem(label, key, icon, children, type) {
+function getItem(label, key, path) {
   return {
     key,
-    icon,
-    children,
-    label,
-    type,
+    label: <Link to={path}>{label}</Link>,
   };
 }
 
 export function MenuDrawer({ showDrawer, isOpen }) {
   const menuItems = [
-    getItem("About Us", "1"),
-    getItem("Home", "2"),
-    getItem("Bible", "3"),
-    getItem("Contact Us", "4"),
+    getItem("About Us", "1", "/about-us"),
+    getItem("Home", "2", "/"),
+    getItem("Bible", "3", "/bible"),
+    getItem("Contact Us", "4", "/contact-us"),
   ];
 
   const onMenuClick = (e) => {

@@ -1,36 +1,59 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import GalleryCard from "./GalleryCard";
+
+import mariia from "/mariia-card.png";
+import pavel from "/pavel-card.jpg";
+import oleg from "/oleg-card.jpg";
+import def from "/def-card.jpg";
+
+const cards = [
+  { id: 1, photo: def, name: "1", placeOfBirth: "..." },
+  {
+    id: 2,
+    photo: mariia,
+    name: "Mary",
+    placeOfBirth: "Kolos village, Russia",
+  },
+  { id: 3, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 4, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 5, photo: pavel, name: "Pavel", placeOfBirth: "Saratov, Russia" },
+  { id: 6, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 7, photo: oleg, name: "Oleg", placeOfBirth: "Saratov, Russia" },
+  { id: 8, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 9, photo: pavel, name: "Pavel", placeOfBirth: "Saratov, Russia" },
+  { id: 10, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 11, photo: oleg, name: "Oleg", placeOfBirth: "Saratov, Russia" },
+  { id: 12, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 13, photo: oleg, name: "13 Oleg", placeOfBirth: "Saratov, Russia" },
+  { id: 14, photo: def, name: "14", placeOfBirth: "..." },
+];
 
 const timelineData = [
   {
     id: "1",
     title: "Nowadays",
-    content:
-      "This is the day the Unix clock began (or December 31, 1969, if you live behind UTC 😉).",
+    cards,
   },
   {
     id: "2",
     title: "20th century",
-    content:
-      "This is the day the Unix clock began (or December 31, 1969, if you live behind UTC 😉).",
+    cards,
   },
   {
     id: "3",
     title: "19th century",
-    content:
-      "This is the day the Unix clock began (or December 31, 1969, if you live behind UTC 😉).",
+    cards,
   },
   {
     id: "4",
     title: "18th century",
-    content:
-      "This is the day the Unix clock began (or December 31, 1969, if you live behind UTC 😉).",
+    cards,
   },
   {
     id: "5",
     title: "17th century",
-    content:
-      "This is the day the Unix clock began (or December 31, 1969, if you live behind UTC 😉).",
+    cards,
   },
 ];
 
@@ -68,16 +91,15 @@ const TimelineItem = ({ data, isOpen, toggleItem }) => {
           className={`absolute top-8 transform -translate-y-1/2 left-6 ml-2.5 w-4 h-4 ${dotClass} rounded-full`}
         />
       </div>
-      <div className="flex-1 pl-4">
+      <div className="flex-1 pl-4 w-full">
         <h3 className={`text-lg text-left mt-5 ml-10 ${titleClass}`}>
           {data.title}
         </h3>
         <div
           className={`overflow-hidden transition-all ease-in-out duration-200 ${contentClass}`}
         >
-          <div className="mt-4 text-gray-800">
-            <p>{data.content}</p>
-            {/* карусель изображений */}
+          <div className="mt-4 ml-16 text-gray-800">
+            <GalleryCard cards={data.cards} />
           </div>
         </div>
       </div>
