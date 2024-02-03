@@ -98,7 +98,7 @@ const TimelineItem = ({ data, isOpen, toggleItem }) => {
         <div
           className={`overflow-hidden transition-all ease-in-out duration-200 ${contentClass}`}
         >
-          <div className="mt-4 ml-16 text-gray-800">
+          <div className="pl-16 text-gray-800">
             <GalleryCard cards={data.cards} />
           </div>
         </div>

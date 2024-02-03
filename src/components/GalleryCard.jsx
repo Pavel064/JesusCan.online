@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 
 function GalleryCard({ cards }) {
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [animationPlayState, setAnimationPlayState] = useState("running");
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    setIsAnimated(!prefersReducedMotion);
+    if (prefersReducedMotion) {
+      setAnimationPlayState("paused");
+    }
 
     const animationName = "scrollAnimation";
     const styleSheet = document.createElement("style");
-    styleSheet.type = "text/css";
     const keyFrames = `
       @keyframes ${animationName} {
         from { transform: translateX(0); }
@@ -28,28 +30,44 @@ function GalleryCard({ cards }) {
 
   const animationDuration = Math.round((144 + 20) * cards.length * 0.03);
 
-  const scrollerInnerStyles = {
-    display: "flex",
-    gap: "20px",
-    animation: isAnimated
-      ? `scrollAnimation ${animationDuration}s linear infinite`
-      : "none",
+  const handleMouseEnter = (index) => {
+    setAnimationPlayState("paused");
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setAnimationPlayState("running");
+    setHoveredIndex(null);
   };
 
   return (
-    <div style={{ overflow: "hidden", width: "100%", position: "relative" }}>
-      <div style={scrollerInnerStyles}>
+    <div className="relative pt-5 pb-4 w-full overflow-hidden">
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          animation: `scrollAnimation ${animationDuration}s linear infinite`,
+          animationPlayState: animationPlayState,
+        }}
+      >
         {[...cards, ...cards].map((card, index) => (
           <div
             key={`${card.id}-${index}`}
-            className="flex flex-col w-36 h-48 rounded-md shadow-md bg-white"
-            style={{ flexShrink: 0, width: "144px" }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => console.log(card.id)}
+            className="relative flex flex-col shrink-0 w-36 h-48 rounded-md shadow-md bg-white"
+            style={{
+              transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+              transition: "transform 0.3s ease",
+              zIndex: hoveredIndex === index ? 1 : 0,
+            }}
           >
             <div className="h-36 rounded-t-md overflow-hidden">
               <img
                 src={card.photo}
                 alt={card.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="text-xs text-center my-2 px-2 overflow-hidden">
@@ -60,16 +78,10 @@ function GalleryCard({ cards }) {
         ))}
       </div>
       <div
+        className="absolute top-0 right-0 bottom-0 left-0 pointer-events-none"
         style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
           background:
             "linear-gradient(90deg, #E3E4E8 0%, rgba(227,228,232,0) 10%, rgba(227,228,232,0) 90%, #E3E4E8 100%)",
-
-          pointerEvents: "none",
         }}
       ></div>
     </div>
