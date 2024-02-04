@@ -1,4 +1,4 @@
-import Button from "./Button";
+import NeumorphicButton from "./NeumorphicButton";
 
 import arrDown from "/arrow-down.svg";
 import arrUp from "/arrow-up.svg";
@@ -169,11 +169,11 @@ const Slider = () => {
           Year of Acceptance of Christ
         </div>
         <div className="flex flex-row self-center gap-5">
-          <Button
+          <NeumorphicButton
             label="Prev"
             btnStyle={{ width: "100px", height: "50px", background: "#EDEDE9" }}
           />
-          <Button
+          <NeumorphicButton
             label="Next"
             btnStyle={{ width: "100px", height: "50px", background: "#EDEDE9" }}
           />

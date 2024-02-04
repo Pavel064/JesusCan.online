@@ -1,12 +1,9 @@
-import React from "react";
-import CustomTimeline from "../components/CustomTimeLine";
-import TestimonyAdding from "../components/TestimonyAdding";
+import TimelineNavigator from "../components/TimelineNavigator";
 
 const Home = () => {
   return (
     <div>
-      <CustomTimeline />
-      <TestimonyAdding />
+      <TimelineNavigator />
     </div>
   );
 };

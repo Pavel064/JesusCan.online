@@ -21,10 +21,8 @@ a:hover {
   color: #2A9D8F;
 }
 
+/* NeumorphicButton */
 .neumorphic-button {
-  /* display: inline-size;
-  aspect-ratio: 1/1; */
-  color: white;
   border-radius: 12px;
   display: grid;
   place-content: center;
@@ -52,6 +50,8 @@ a:hover {
   font-size: 0.875rem;
   transition: font-size 0.1s;
 }
+/* END NeumorphicButton */
+
 
 /* MenuDrawer */
 .ant-drawer-header-title {

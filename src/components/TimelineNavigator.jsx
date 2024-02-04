@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import NeumorphicButton from "./NeumorphicButton";
 import GalleryCard from "./GalleryCard";
 
 import mariia from "/mariia-card.png";
@@ -15,18 +15,13 @@ const cards = [
     name: "Mary",
     placeOfBirth: "Kolos village, Russia",
   },
-  { id: 3, photo: def, name: "...", placeOfBirth: "..." },
-  { id: 4, photo: def, name: "...", placeOfBirth: "..." },
+  { id: 3, photo: def, name: "3", placeOfBirth: "..." },
+  { id: 4, photo: def, name: "4", placeOfBirth: "..." },
   { id: 5, photo: pavel, name: "Pavel", placeOfBirth: "Saratov, Russia" },
-  { id: 6, photo: def, name: "...", placeOfBirth: "..." },
-  { id: 7, photo: oleg, name: "Oleg", placeOfBirth: "Saratov, Russia" },
-  { id: 8, photo: def, name: "...", placeOfBirth: "..." },
-  { id: 9, photo: pavel, name: "Pavel", placeOfBirth: "Saratov, Russia" },
-  { id: 10, photo: def, name: "...", placeOfBirth: "..." },
-  { id: 11, photo: oleg, name: "Oleg", placeOfBirth: "Saratov, Russia" },
-  { id: 12, photo: def, name: "...", placeOfBirth: "..." },
-  { id: 13, photo: oleg, name: "13 Oleg", placeOfBirth: "Saratov, Russia" },
-  { id: 14, photo: def, name: "14", placeOfBirth: "..." },
+  { id: 6, photo: def, name: "6", placeOfBirth: "..." },
+  { id: 7, photo: def, name: "7", placeOfBirth: "..." },
+  { id: 8, photo: oleg, name: "Oleg", placeOfBirth: "Saratov, Russia" },
+  { id: 9, photo: def, name: "9", placeOfBirth: "..." },
 ];
 
 const timelineData = [
@@ -98,8 +93,19 @@ const TimelineItem = ({ data, isOpen, toggleItem }) => {
         <div
           className={`overflow-hidden transition-all ease-in-out duration-200 ${contentClass}`}
         >
-          <div className="pl-16 text-gray-800">
+          <div className="pl-16 pb-7 text-gray-800">
             <GalleryCard cards={data.cards} />
+            <div className="pt-5">
+              <NeumorphicButton
+                to={"/adding-testimony"}
+                label="Add YOUR testimony"
+                btnStyle={{
+                  width: "190px",
+                  background: "white",
+                  color: "#E85D04",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -107,7 +113,7 @@ const TimelineItem = ({ data, isOpen, toggleItem }) => {
   );
 };
 
-const CustomTimeLine = () => {
+const TimelineNavigator = () => {
   const [openItems, setOpenItems] = useState({ [timelineData[0].id]: true });
 
   const handleExpandAll = () => {
@@ -127,8 +133,12 @@ const CustomTimeLine = () => {
       <div className="relative mx-auto md:px-20 2xl:max-w-7xl">
         <span className="absolute top-32 bottom-0 left-[120px] w-1 bg-[#264653]" />
         <div className="flex flex-row gap-4 pt-8">
-          <Button label="Expand all" onClick={handleExpandAll} />
-          <Button label="Collapse All" onClick={handleCollapseAll} />
+          <NeumorphicButton label="Expand all" onClick={handleExpandAll} />
+          <NeumorphicButton
+            label="Collapse All"
+            onClick={handleCollapseAll}
+            btnStyle={{ width: "115px" }}
+          />
         </div>
         <div className="mt-4">
           {timelineData.map((item) => (
@@ -147,4 +157,4 @@ const CustomTimeLine = () => {
   );
 };
 
-export default CustomTimeLine;
+export default TimelineNavigator;
