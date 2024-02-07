@@ -35,6 +35,7 @@ function AboutUs() {
               className="flex flex-col w-full gap-4"
               onClick={(e) => e.stopPropagation()}
               name="feedbackForm"
+              method="POST"
               data-netlify="true"
               onSubmit={handleSubmit}
             >
