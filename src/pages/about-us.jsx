@@ -36,7 +36,6 @@ function AboutUs() {
               onClick={(e) => e.stopPropagation()}
               name="feedbackForm"
               data-netlify="true"
-              data-netlify-recaptcha="true"
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="feedbackForm" />
