@@ -1,31 +1,22 @@
 import React from "react";
 
 function AboutUs() {
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const encodedData = new URLSearchParams(formData).toString();
-    console.log(encodedData);
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: encodedData,
-      });
-
-      if (response.ok) {
-        console.log("Form successfully submitted");
-      } else {
-        console.error("Ошибка при отправке формы.");
-      }
-    } catch (error) {
-      console.error("Ошибка при отправке формы: ", error);
-    }
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
   };
+  document.querySelector("form").addEventListener("submit", handleSubmit);
+
   return (
     <div className="bg-[#E3E4E8] py-10">
       <div className="mx-auto md:px-20 2xl:max-w-7xl">
@@ -34,12 +25,12 @@ function AboutUs() {
             <form
               className="flex flex-col w-full gap-4"
               onClick={(e) => e.stopPropagation()}
-              name="feedbackForm"
+              name="feedbackFormTest"
               method="POST"
-              netlify
+              data-netlify="true"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="form-name" value="feedbackForm" />
+              <input type="hidden" name="form-name" value="feedbackFormTest" />
 
               <input type="text" name="name" placeholder="YourName" required />
               <input type="email" name="email" placeholder="Email" required />
