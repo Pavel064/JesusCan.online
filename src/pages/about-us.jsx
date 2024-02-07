@@ -15,7 +15,6 @@ function AboutUs() {
       .then(() => console.log("Form successfully submitted"))
       .catch((error) => alert(error));
   };
-  document.querySelector("form").addEventListener("submit", handleSubmit);
 
   return (
     <div className="bg-[#E3E4E8] py-10">
