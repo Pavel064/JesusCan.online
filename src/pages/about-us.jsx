@@ -36,7 +36,7 @@ function AboutUs() {
               onClick={(e) => e.stopPropagation()}
               name="feedbackForm"
               method="POST"
-              data-netlify="true"
+              netlify
               onSubmit={handleSubmit}
             >
               <input type="hidden" name="form-name" value="feedbackForm" />
