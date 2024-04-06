@@ -7,6 +7,7 @@ import AddingTestimony from "./pages/adding-testimony";
 import ContactUs from "./pages/contact-us";
 import AboutUs from "./pages/about-us";
 import Bible from "./pages/bible";
+import Testimony from "./pages/testimony";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/bible" element={<Bible />} />
+            <Route path="/testimony" element={<Testimony />} />
           </Routes>
         </div>
         <Footer className="mt-auto" />

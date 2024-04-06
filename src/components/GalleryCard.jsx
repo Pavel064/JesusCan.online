@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function GalleryCard({ cards }) {
+  const navigate = useNavigate();
+
   const [animationPlayState, setAnimationPlayState] = useState("running");
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleCardClick = (cardId) => {
+    navigate(`/testimony?id=${cardId}`);
+  };
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -55,7 +62,7 @@ function GalleryCard({ cards }) {
             key={`${card.id}-${index}`}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
-            onClick={() => console.log(card.id)}
+            onClick={() => handleCardClick(card.id)}
             className="relative flex flex-col shrink-0 w-36 h-48 rounded-md shadow-md bg-white"
             style={{
               transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
